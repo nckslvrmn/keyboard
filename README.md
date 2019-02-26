@@ -6,6 +6,7 @@ I use the keymap 60_ansi_arrow_fkeys and apply a small patch to the keymap.c fil
 
 to compile the firmware simply run:
 ```
-patch keyboards/dz60/keymaps/60_ansi_arrow_fkeys/keymap.c custom.patch
+patch qmk_firmware/keyboards/dz60/keymaps/60_ansi_arrow_fkeys/keymap.c custom.patch
+cd qmk_firmware
 sudo make dz60:60_ansi_arrow_fkeys:dfu
 ```
