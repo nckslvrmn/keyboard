@@ -1,12 +1,19 @@
 # keyboard
 
-the QMK layout I use is found [here](https://github.com/qmk/qmk_firmware/tree/master/keyboards/dz60).
+I use [QMK](https://github.com/qmk/qmk_firmware).
 
-I use the keymap 60_ansi_arrow_fkeys and apply a small patch to the keymap.c file. That file can be found in this repo.
+For the DZ60, I use the keymap dz60/60_ansi_arrow_fkeys.
+For the massdrop alt, I use massdrop/alt/default_md
 
 to compile the firmware simply run:
 ```
-patch qmk_firmware/keyboards/dz60/keymaps/60_ansi_arrow_fkeys/keymap.c custom.patch
 cd qmk_firmware
+patch -p1 -i ../custom.patch
+
+# for dz60
 sudo make dz60:60_ansi_arrow_fkeys:dfu
+
+# for massdrop alt
+sudo make massdrop/alt:default_md
+sudo mdloader --first --download massdrop_alt_default_md.bin --restart
 ```
