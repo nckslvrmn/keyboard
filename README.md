@@ -1,22 +1,25 @@
 # keyboard
 
-I use [QMK](https://github.com/qmk/qmk_firmware).
+I use [QMK](https://qmk.fm/), or on windows [QMK MSYS](https://msys.qmk.fm/).
 
-For the DZ60, I use the keymap dz60/60_ansi_arrow_fkeys.
-
-For the massdrop alt, I use massdrop/alt/default_md.
-
-to compile the firmware simply run:
+## Copy config
+Copy the keymaps to the installed `qmk_firmware` path:
 ```
-cd qmk_firmware
-patch -p1 -i ../custom.patch
-
-# for dz60
-# plug in while holding SPACE + B
-sudo make dz60:60_ansi_arrow_fkeys:dfu
-
-# for massdrop alt
-# press reset button on bottom of case once mdloader is running
-sudo make massdrop/alt:default_md
-sudo mdloader --first --download massdrop_alt_default_md.bin --restart
+cp -r keyboards/* /PATH/TO/qmk_firmware/keyboards 
 ```
+
+## Compiling
+
+### dz60
+To compile for the dz60, run:
+```
+qmk flash -kb dz60 -km nick
+```
+Once the bootloader program is running plug the dz60 in while holding `SPACE + B`.
+
+### id80
+To compile for the id80, run:
+```
+qmk flash -kb idobao/id80/v1/ansi -km nick
+```
+Once the bootloader program is running press the bootloader button on the underside of the PCB.
