@@ -20,6 +20,6 @@ Once the bootloader program is running plug the dz60 in while holding `SPACE + B
 ### id80
 To compile for the id80, run:
 ```
-qmk flash -kb idobao/id80/v1/ansi -km nick
+qmk flash -kb idobao/id80/v2/ansi -km nick
 ```
 Once the bootloader program is running press the bootloader button on the underside of the PCB.
